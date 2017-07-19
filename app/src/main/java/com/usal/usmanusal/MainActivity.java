@@ -12,6 +12,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +23,7 @@ import com.usal.usmanusal.Adapters.MyRecyclerAdapter;
 import com.usal.usmanusal.Model.Idea;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +31,7 @@ private RecyclerView recycle;
 private List<Idea> idealist=new ArrayList<>();
 private  MyRecyclerAdapter madapter;
 private RecyclerViewDivider divider;
-
+long time=new Date().getTime();
 //private
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +44,9 @@ private RecyclerViewDivider divider;
         divider=RecyclerViewDivider.with(this)
               //  .color(Color.RED)
                // .drawable(this.getResources().getDrawable(R.drawable.horizontal_div))
-                .drawable(ContextCompat.getDrawable(this,R.drawable.horizontal_div))
-               // .size(80)
-                .tint(Color.RED)
+                //.drawable(ContextCompat.getDrawable(this,R.drawable.horizontal_div))
+                .size(1)
+                .tint(Color.BLACK)
                 .build();
         divider.addTo(recycle);
 
@@ -60,6 +62,10 @@ private RecyclerViewDivider divider;
 //                        .setAction("Action", null).show();
                 Intent intent =new Intent(MainActivity.this, PostActivity.class);
                 startActivity(intent);
+//                long ntime=new Date().getTime();
+//                idealist.add(new Idea((String) DateFormat.format("dd-MM-yy (hh:mm:ss)",ntime)));
+//                madapter.notifyDataSetChanged();
+
 
             }
         });
@@ -91,7 +97,7 @@ private RecyclerViewDivider divider;
         idealist.add(new Idea("One"));
         idealist.add(new Idea("Two"));
         idealist.add(new Idea("Three"));
-        idealist.add(new Idea(("Four")));
+        idealist.add(new Idea((String) DateFormat.format("dd-MM-yy (hh:mm:ss)",time)));
         madapter.notifyDataSetChanged();
     }
 
