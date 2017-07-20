@@ -38,6 +38,7 @@ private RecyclerView recyclepost;
     private EditText edit_titler;
     private EditText edit_storie;
     private Button publish;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -63,6 +64,7 @@ private RecyclerView recyclepost;
                }
                 else if(!(TextUtils.isEmpty(edit_titler.getText().toString().trim()))&&!(TextUtils.isEmpty(edit_storie.getText().toString().trim()))&&isOnline()){
                   // Snackbar.make(view, "Fiels  Empty", Snackbar.LENGTH_LONG).show();
+
                 }
                 else{
                    Snackbar.make(view, "No Internet Connection .....", Snackbar.LENGTH_LONG).show();
