@@ -32,7 +32,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
          Idea idd=ide.get(position);
-        holder.idea.setText(idd.getIdea());
+      //  holder.idea.setText(idd.getIdea());
     }
 
     @Override
@@ -43,7 +43,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
       private TextView idea;
         public MyViewHolder(View itemView) {
             super(itemView);
-            idea=(TextView)itemView.findViewById(R.id.idea_row);
+       //     idea=(TextView)itemView.findViewById(R.id.idea_row);
         }
     }
 }
